@@ -96,10 +96,10 @@ class ZXAN(object):
         self.enable = None                                 # Enable mode is an optional parameter
         self.debug = False
         self.hostname = "router"
-        self.output_file = "cis"                           # prefix for the output file(s)
+        self.output_file = "zte"                           # prefix for the output file(s)
         self.file_obj = None
         self.error_msg = None
-        self.privilege = ZXAN.USER                          # <0-15>  User privilege level, default is 1
+        self.privilege = ZXAN.USER                         # <0-15>  User privilege level, default is 1
         self.ssh_conn = ssh_conn                           # paramiko has two objects, a connect object
         self.ssh = None                                    # and an the exec object
                                                            # override default policy to reject all unknown servers
@@ -313,35 +313,7 @@ def main():
         module.fail_json(msg=node.get_error_msg())
 
 
-
 from ansible.module_utils.basic import *
 if __name__ == '__main__':
     main()
-    # print "ok"
-    
-    # olt = ZXAN(paramiko.SSHClient())
-    # olt.set_debug(True)
-    
-    # print "logging..."
-    # olt.login('10.0.30.2', 'zte', 'zte')
-    # print "enable"
-    
-    # olt.enable_mode('zxr10')    
-    
-    # print "--show terminal"
-    # print olt.command("show terminal\n")
-    
-    # print "--show version-running"
-    # print olt.command("show version-running\n")    
-    
-    # print "--show card"
-    # print olt.command("show card\n")   
-    
-    # print "--show running-config"
-    # print olt.command("show running-config\n")
-
-
-    # print "---"
-    
-    
-    
+  
